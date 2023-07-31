@@ -53,36 +53,46 @@ while True:
     print("10) Exit")
     print("-------------------\n")
 
-    user_input = nei(": ").lower()
-    print(show_input())
+    try:
+        user_input = nei(": ").lower()
+        valid_inputs = ['1','2','3','4','5','6','7','8','9','10']
+        
 
-    if user_input == '6':
-        break
+        if user_input not in valid_inputs:
+            raise ValueError('Please select a valid option')    
 
-    if user_input in ('1', '2','3','4','6'):
-        num1 = float(input("\nEnter first number: "))
-        num2 = float(input("Enter second number: "))
+
+        if user_input == '10':
+            break
+
+        print(show_input())    
+
+        if user_input in ('1', '2','3','4','6'):
+            num1 = float(input("\nEnter first number: "))
+            num2 = float(input("Enter second number: "))
     
-        if user_input == '1':
-            print('\nResult:', sum(num1, num2))
-        elif user_input == '2':
-            print('\nResult:', subtract(num1,num2))
-        elif user_input == '3':
-            print('\nResult:', multiply(num1,num2))
-        elif user_input == '4':
-            print('\nResult:', divide(num1,num2))
-        elif user_input == "6":
-            print("\nResult: ", math.pow(num1,num2))
+            if user_input == '1':
+                print('\nResult:', sum(num1, num2))
+            elif user_input == '2':
+                print('\nResult:', subtract(num1,num2))
+            elif user_input == '3':
+                print('\nResult:', multiply(num1,num2))
+            elif user_input == '4':
+                print('\nResult:', divide(num1,num2))
+            elif user_input == "6":
+                print("\nResult: ", math.pow(num1,num2))
 
-    if user_input in ('5','7','8','9'):
-        num3 = float(input("\nEnter the number: "))
+        if user_input in ('5','7','8','9'):
+            num3 = float(input("\nEnter the number: "))
 
-        if user_input == '5':
-            print("\nResult :", math.sqrt(num3))
-        elif user_input == "7":
-            print("\nResult: ", math.sin(num3))
-        elif user_input == "8":
-            print("\nResult: ", math.cos(num3))
-        elif user_input == "9":
-            print("\nResult: ", math.tan(num3))
-            
+            if user_input == '5':
+                print("\nResult :", math.sqrt(num3))
+            elif user_input == "7":
+                print("\nResult: ", math.sin(num3))
+            elif user_input == "8":
+                print("\nResult: ", math.cos(num3))
+            elif user_input == "9":
+                print("\nResult: ", math.tan(num3))
+
+    except ValueError as Err:
+        print(Err)
