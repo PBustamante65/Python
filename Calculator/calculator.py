@@ -1,4 +1,5 @@
 import math
+import os
 
 def sum(x,y):
     return x + y
@@ -52,6 +53,7 @@ while True:
     print('9) Tangent of a angle')
     print("10) Exit")
     print("-------------------\n")
+    
 
     try:
         user_input = nei(": ").lower()
@@ -65,9 +67,11 @@ while True:
         if user_input == '10':
             break
 
-        print(show_input())    
+           
 
         if user_input in ('1', '2','3','4','6'):
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(show_input()) 
             num1 = float(input("\nEnter first number: "))
             num2 = float(input("Enter second number: "))
     
@@ -83,6 +87,8 @@ while True:
                 print("\nResult: ", math.pow(num1,num2))
 
         if user_input in ('5','7','8','9'):
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(show_input())
             num3 = float(input("\nEnter the number: "))
 
             if user_input == '5':
